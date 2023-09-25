@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+</head>
+<body>
+  <h1>User Registration</h1>
+  <form action="/api/users/register" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" name="name" required>
+    <span class="error"><%= errors.name ? errors.name.msg : '' %></span><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+    <span class="error"><%= errors.email ? errors.email.msg : '' %></span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    <span class="error"><%= errors.password ? errors.password.msg : '' %></span><br>
+
+    <!-- Other form fields -->
+
+    <label for="files">Files:</label>
+    <input type="file" name="files" multiple required>
+    <span class="error"><%= errors['files.0'] ? errors['files.0'].msg : '' %></span><br>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

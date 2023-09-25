@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login</title>
+</head>
+<body>
+  <h1>User Login</h1>
+  <!-- <form action="/api/users/login" method="POST"> -->
+    <form action="/api/jwt/login" method="POST">
+    <label for="email">Email:</label>
+    <input type="email" name="email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" required><br>
+
+    <span class="error"><%= error %></span><br>
+
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>
